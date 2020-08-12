@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+( \
+	cat esm/before.js; \
+	./node_modules/browserify/bin/cmd.js --entry esm/entrypoint.js; \
+	cat esm/after.js; \
+) | cat > dist/js-yaml.esm.js

@@ -1,0 +1,16 @@
+<!doctype html>
+
+<script type="module">
+
+  import {jsYaml} from "../dist/js-yaml.esm.js"
+
+  console.log(jsYaml.safeLoad(`
+
+    test:
+      - someData: hellohello
+      - more_test_data: 123
+      - date: 2020-01-01
+
+  `))
+
+</script>
