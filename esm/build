@@ -4,4 +4,7 @@
 	cat esm/before.js; \
 	./node_modules/browserify/bin/cmd.js --entry esm/entrypoint.js; \
 	cat esm/after.js; \
-) | cat > dist/js-yaml.esm.js
+) | cat | ./node_modules/terser/bin/terser \
+	--compress \
+	--mangle \
+	> dist/js-yaml.esm.js
